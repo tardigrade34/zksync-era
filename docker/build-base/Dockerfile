@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM debian:12.6-slim
 
 RUN apt-get update && apt-get install -y curl clang openssl libssl-dev gcc g++ \
     pkg-config build-essential libclang-dev linux-libc-dev liburing-dev && \
