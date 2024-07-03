@@ -1,5 +1,5 @@
 # Building solidity from sources so binary is available for any architecture
-FROM debian:bookworm as solidity-builder
+FROM debian:12.6 as solidity-builder
 
 # Install prerequisites
 RUN apt-get update && apt-get install -y \
@@ -23,7 +23,7 @@ WORKDIR /solidity/build
 RUN cmake ..
 RUN make
 
-FROM debian:bookworm as rust-lightweight
+FROM debian:12.6 as rust-lightweight
 
 ARG ARCH=amd64
 
