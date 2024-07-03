@@ -6,7 +6,7 @@ COPY . .
 
 RUN cargo build --release --bin snapshots_creator
 
-FROM debian:bookworm-slim
+FROM debian:12.6-slim
 
 RUN apt-get update && apt-get install -y curl libpq5 liburing-dev ca-certificates && \
     rm -rf /var/lib/apt/lists/*
