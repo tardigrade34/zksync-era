@@ -7,7 +7,7 @@ COPY . .
 
 RUN cd prover && cargo build --release --bin zksync_prover_fri_gateway
 
-FROM debian:bookworm-slim
+FROM debian:12.6-slim
 RUN apt-get update && apt-get install -y curl libpq5 ca-certificates && rm -rf /var/lib/apt/lists/*
 
 # copy VK required for proof wrapping
